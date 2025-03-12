@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resturant Login</title>
+    <link rel="icon" href="./images/1st logo desig-04.png" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+ 
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+ 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+ 
+        /* Flex container for both panels */
+        body {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+ 
+        /* Left Panel - Background Image */
+        .left-panel {
+            width: 50%;
+            background: #023047;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center;
+            align-items: center; */
+            position: relative;
+            overflow: hidden;
+            background-position: center;
+        }
+ 
+        .whitelogo {
+            width: 400px;
+            height: 73.861px;
+            flex-shrink: 0;
+        }
+ 
+        .persondata {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+ 
+        /* Right Panel - Login Form */
+        .right-panel {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            
+        }
+
+        .right-panel::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('./images/ivan-torres-MQUqbmszGGM-unsplash.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.7;
+            z-index: -1; 
+        }
+
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 300px;
+        }
+ 
+        .logo {
+            width: 220px;
+            margin: 0 auto 20px;
+            /* Center the logo */
+            display: block;
+        }
+ 
+        .form-group {
+            width: 100%;
+            color: #FB8500;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .login-form button {
+            width: 100%;
+            color: #ef0000;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black !important;
+        }
+
+
+ 
+        .form-group label {
+            color: var(--H4, #000000);
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 21px;
+            /* 150% */
+            margin-bottom: 5px;
+        }
+ 
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #656565;
+            border-radius: 6px;
+            font-size: 16px;
+            display: flex;
+            height: 42px;
+            align-items: flex-start;
+            align-self: stretch;
+            color: var(--H4, #656565);
+            font-family: Poppins;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 18px;
+            flex: 1 0 0;
+        }
+ 
+        .form-group-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+ 
+        .form-group-checkbox label {
+            cursor: pointer;
+            display: flex;
+            /* width: 16px; */
+            height: 16px;
+            padding: 4px;
+            align-items: center;
+            gap: 10px;
+            color: var(--H4, #656565);
+            font-family: Poppins;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 18px;
+            /* 150% */
+        }
+ 
+        .btn {
+            padding: 12px;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+ 
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            color: white;
+        }
+ 
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+ 
+        .divider {
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #666;
+        }
+ 
+        .btn-microsoft {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            background-color: #f3f3f3;
+            border: 2px solid #ccc;
+            color: #333;
+            font-weight: 500;
+        }
+ 
+        .btn-microsoft img {
+            width: 20px;
+            height: 20px;
+        }
+ 
+        .forgotpassword{
+            color: var(--tertiary-color, #FB8500);
+            font-family: Poppins;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 18px; /* 150% */
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+ 
+            .left-panel {
+                width: 100%;
+                height: 50vh;
+            }
+ 
+            .right-panel {
+                width: 100%;
+                height: auto;
+                padding: 20px;
+            }
+ 
+            .login-container {
+                max-width: 360px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+ 
+<body>
+    <!-- Left Panel (Background Image) -->
+    <div class="left-panel">
+
+        <img src="/images/abhishek-hajare-e7qz85k42m4-unsplash (1).jpg" alt="Left Bar" class="" />
+        
+        
+    </div>
+ 
+    <!-- Right Panel (Login Form) -->
+    <div class="right-panel">
+        <div class="login-container">
+            <img src="./images/1st logo desig-04.png" alt="Resturant Logo" class="logo" />
+            <form name="loginform" class="login-form" method="POST">
+                <div class="form-group">
+                    <label for="email" style="color: #f4f1f1;font-weight: bolder;" >Email</label>
+                    <input id="email" type="email" class="form-control" placeholder="Enter your email" name="email" required />
+                </div>
+                <div class="form-group">
+                    <label for="password" style="color: #f4f1f1;font-weight: bolder;">Password</label>
+                    <input id="password" type="password"  class="form-control"  placeholder="Enter your password"  name="password"  required />
+                </div>
+                <button type="button" class="btn" style="background-color:  rgb(235 24 24 / 42%);color: white;" onclick="loginFormFun()">Sign In</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    const loginFormFun = (event) => {
+        const form = document.querySelector('.login-form');
+        var username= form.querySelector('#email').value;
+        var password = form.querySelector('#password').value;
+
+        const u_name = "snackhub@gmail.com";
+        const u_password = "kirttika@123";
+        const valid = true
+
+        if(username === u_name && password === u_password) {
+            console.log('Success', valid);
+            window.location.href = "index.html";
+        } else {
+            alert('Invalid Password!!! Try again...');
+        }
+    }
+</script>
